@@ -3,17 +3,18 @@ import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-br from-card via-secondary/10 to-card border-t border-border/50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-rose/5 to-transparent" />
+      <div className="container mx-auto px-4 py-16 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <h3 className="font-display text-2xl font-bold text-primary mb-4">
+            <h3 className="font-display text-3xl font-bold bg-gradient-to-r from-primary to-coffee-light bg-clip-text text-transparent mb-4">
               Drips
             </h3>
             <p className="text-muted-foreground text-sm mb-4">
               Happiness Baked Fresh Everyday 🍰
             </p>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-muted-foreground text-sm font-medium">
               100% Vegetarian | Fresh & Hygienic
             </p>
           </div>
@@ -63,18 +64,18 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Follow Us</h4>
+            <h4 className="font-semibold text-foreground mb-6 text-lg">Follow Us</h4>
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="w-12 h-12 rounded-2xl glass flex items-center justify-center text-primary hover:bg-gradient-to-r hover:from-primary hover:to-coffee-light hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="w-12 h-12 rounded-2xl glass flex items-center justify-center text-primary hover:bg-gradient-to-r hover:from-primary hover:to-coffee-light hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -83,8 +84,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground text-sm">
-          <p>© {new Date().getFullYear()} Drips Bakery & Cafe. All rights reserved.</p>
+        <div className="border-t border-border/50 mt-12 pt-8 text-center">
+          <p className="text-muted-foreground text-sm">
+            © {new Date().getFullYear()} Drips Bakery & Cafe. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

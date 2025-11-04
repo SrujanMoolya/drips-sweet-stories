@@ -36,8 +36,10 @@ const Menu = () => {
   return (
     <div className="min-h-screen pt-28 pb-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="font-display text-5xl md:text-6xl font-bold mb-4">Our Menu</h1>
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h1 className="font-display text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary via-coffee-light to-rose bg-clip-text text-transparent">
+            Our Menu
+          </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Discover our delicious selection of freshly baked goods, handcrafted beverages, 
             and delightful desserts. All items are 100% vegetarian.
@@ -63,16 +65,18 @@ const Menu = () => {
           ))}
         </Tabs>
 
-        <div className="mt-16 bg-secondary/30 rounded-2xl p-8 text-center">
-          <h3 className="font-display text-2xl font-bold mb-4">Order for Delivery</h3>
-          <p className="text-muted-foreground mb-6">
+        <div className="mt-16 glass rounded-3xl p-10 text-center border border-white/20 animate-fade-in-up hover-lift">
+          <h3 className="font-display text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-rose bg-clip-text text-transparent">
+            Order for Delivery
+          </h3>
+          <p className="text-muted-foreground mb-8 text-lg">
             Craving something sweet? Order now through our delivery partners!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#" className="inline-flex items-center justify-center h-12 px-8 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
+            <a href="#" className="inline-flex items-center justify-center h-14 px-10 rounded-full bg-gradient-to-r from-primary to-coffee-light text-white font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300">
               Order on Swiggy
             </a>
-            <a href="#" className="inline-flex items-center justify-center h-12 px-8 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
+            <a href="#" className="inline-flex items-center justify-center h-14 px-10 rounded-full bg-gradient-to-r from-primary to-coffee-light text-white font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300">
               Order on Zomato
             </a>
           </div>

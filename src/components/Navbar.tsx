@@ -19,14 +19,14 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full bg-card/95 backdrop-blur-md shadow-sm z-50 border-b border-border">
+    <nav className="fixed top-0 w-full glass-strong shadow-lg z-50 border-b border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl md:text-3xl font-display font-bold text-primary">
+          <Link to="/" className="flex items-center space-x-2 group">
+            <span className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-primary to-coffee-light bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105">
               Drips
             </span>
-            <span className="text-lg md:text-xl font-light text-muted-foreground">
+            <span className="text-lg md:text-xl font-light text-muted-foreground group-hover:text-primary transition-colors">
               Bakery & Cafe
             </span>
           </Link>
@@ -44,7 +44,7 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button size="sm" className="bg-primary hover:bg-primary/90">
+            <Button size="sm" className="bg-gradient-to-r from-primary to-coffee-light hover:shadow-lg hover:scale-105 transition-all duration-300">
               <Phone className="w-4 h-4 mr-2" />
               Order Now
             </Button>
@@ -76,7 +76,7 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
+              <Button size="sm" className="w-full bg-gradient-to-r from-primary to-coffee-light hover:shadow-lg hover:scale-105 transition-all duration-300">
                 <Phone className="w-4 h-4 mr-2" />
                 Order Now
               </Button>
