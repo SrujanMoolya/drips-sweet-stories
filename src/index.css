@@ -8,54 +8,63 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 32 40% 98%;
-    --foreground: 28 25% 15%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 28 25% 15%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 28 25% 15%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 28 50% 42%;
-    --primary-foreground: 32 40% 98%;
+    --primary: 30 100% 50%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 340 55% 90%;
-    --secondary-foreground: 28 25% 15%;
+    --secondary: 180 60% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 32 30% 95%;
-    --muted-foreground: 28 15% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 340 65% 88%;
-    --accent-foreground: 28 25% 15%;
+    --accent: 45 100% 60%;
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 32 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 32 30% 90%;
-    --input: 32 30% 92%;
-    --ring: 28 50% 42%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 30 100% 50%;
 
-    --radius: 1.25rem;
+    --radius: 2rem;
 
-    /* Modern bakery colors with gradients */
-    --coffee: 28 50% 42%;
-    --coffee-light: 28 45% 65%;
-    --cream: 32 45% 96%;
-    --beige: 32 35% 88%;
-    --rose: 340 65% 88%;
-    --rose-accent: 340 75% 78%;
+    /* Vibrant modern bakery colors */
+    --orange: 30 100% 50%;
+    --orange-light: 35 100% 65%;
+    --yellow: 45 100% 60%;
+    --yellow-light: 50 100% 70%;
+    --blue: 195 85% 60%;
+    --blue-light: 200 85% 70%;
+    --teal: 180 60% 50%;
+    --teal-light: 180 60% 65%;
+    --pink: 340 85% 70%;
+    --pink-light: 340 85% 80%;
+    --brown: 25 40% 35%;
+    --cream: 40 30% 96%;
+    --peach: 15 90% 75%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(28, 50%, 42%) 0%, hsl(28, 45%, 58%) 100%);
-    --gradient-rose: linear-gradient(135deg, hsl(340, 65%, 88%) 0%, hsl(340, 75%, 78%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(28, 50%, 42%) 0%, hsl(340, 65%, 70%) 100%);
+    /* Vibrant gradients */
+    --gradient-orange: linear-gradient(135deg, hsl(30, 100%, 50%) 0%, hsl(15, 100%, 60%) 100%);
+    --gradient-yellow: linear-gradient(135deg, hsl(45, 100%, 60%) 0%, hsl(35, 100%, 65%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(195, 85%, 60%) 0%, hsl(180, 85%, 65%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(180, 60%, 50%) 0%, hsl(170, 60%, 55%) 100%);
+    --gradient-pink: linear-gradient(135deg, hsl(340, 85%, 70%) 0%, hsl(320, 85%, 75%) 100%);
+    --gradient-peach: linear-gradient(135deg, hsl(15, 90%, 75%) 0%, hsl(25, 90%, 80%) 100%);
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -2px hsl(28 30% 60% / 0.15);
-    --shadow-medium: 0 8px 30px -4px hsl(28 30% 50% / 0.2);
-    --shadow-large: 0 20px 50px -12px hsl(28 30% 40% / 0.25);
-    --shadow-glow: 0 0 40px hsl(28 50% 42% / 0.3);
+    /* Playful shadows */
+    --shadow-colored: 0 10px 40px -10px hsl(30 100% 50% / 0.3);
+    --shadow-blue: 0 10px 40px -10px hsl(195 85% 60% / 0.3);
+    --shadow-pink: 0 10px 40px -10px hsl(340 85% 70% / 0.3);
   }
 
   .dark {

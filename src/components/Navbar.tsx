@@ -19,15 +19,15 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full glass-strong shadow-lg z-50 border-b border-white/10">
+    <nav className="fixed top-0 w-full bg-white shadow-lg z-50 border-b-4 border-brown">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <span className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-primary to-coffee-light bg-clip-text text-transparent transition-all duration-300 group-hover:scale-105">
-              Drips
-            </span>
-            <span className="text-lg md:text-xl font-light text-muted-foreground group-hover:text-primary transition-colors">
-              Bakery & Cafe
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-orange rounded-xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+              <span className="text-2xl">🍰</span>
+            </div>
+            <span className="text-2xl md:text-3xl font-display font-black text-brown group-hover:text-orange transition-colors">
+              DRIPS.
             </span>
           </Link>
 
@@ -37,48 +37,48 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(link.path) ? "text-primary" : "text-foreground/80"
+                className={`text-sm font-bold uppercase transition-colors hover:text-orange ${
+                  isActive(link.path) ? "text-orange" : "text-brown"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button size="sm" className="bg-gradient-to-r from-primary to-coffee-light hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <Button variant="yellow" size="sm" className="rounded-full font-bold hover:scale-105 transition-transform">
               <Phone className="w-4 h-4 mr-2" />
-              Order Now
+              ORDER NOW
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-brown hover:text-orange transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={28} strokeWidth={3} /> : <Menu size={28} strokeWidth={3} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
+          <div className="lg:hidden py-4 border-t-2 border-brown">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(link.path) ? "text-primary" : "text-foreground/80"
+                  className={`text-sm font-bold uppercase transition-colors hover:text-orange ${
+                    isActive(link.path) ? "text-orange" : "text-brown"
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button size="sm" className="w-full bg-gradient-to-r from-primary to-coffee-light hover:shadow-lg hover:scale-105 transition-all duration-300">
+              <Button variant="yellow" size="sm" className="w-full rounded-full font-bold">
                 <Phone className="w-4 h-4 mr-2" />
-                Order Now
+                ORDER NOW
               </Button>
             </div>
           </div>

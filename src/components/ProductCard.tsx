@@ -1,33 +1,60 @@
 import { Button } from "@/components/ui/button";
+import { ShoppingCart } from "lucide-react";
 
 interface ProductCardProps {
   name: string;
   description?: string;
   price: string;
   image: string;
+  color?: "yellow" | "blue" | "peach" | "pink" | "teal";
 }
 
-const ProductCard = ({ name, description, price, image }: ProductCardProps) => {
+const ProductCard = ({ name, description, price, image, color = "yellow" }: ProductCardProps) => {
+  const colorClasses = {
+    yellow: "bg-yellow",
+    blue: "bg-blue",
+    peach: "bg-peach",
+    pink: "bg-pink",
+    teal: "bg-teal"
+  };
+
+  const bgClass = colorClasses[color];
+
   return (
-    <div className="group glass rounded-3xl overflow-hidden hover-lift border border-white/20 animate-fade-in-up">
-      <div className="aspect-square overflow-hidden relative">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
-      <div className="p-5">
-        <h3 className="font-semibold text-lg text-foreground mb-1 group-hover:text-primary transition-colors">{name}</h3>
-        {description && (
-          <p className="text-sm text-muted-foreground mb-3 line-clamp-2">{description}</p>
-        )}
-        <div className="flex items-center justify-between">
-          <span className="text-lg font-bold bg-gradient-to-r from-primary to-coffee-light bg-clip-text text-transparent">{price}</span>
-          <Button size="sm" className="bg-gradient-to-r from-primary to-coffee-light hover:shadow-lg hover:scale-105 transition-all duration-300">
-            Order
-          </Button>
+    <div className="group relative animate-fade-in-up">
+      <div className={`${bgClass} rounded-[3rem] p-6 relative overflow-hidden hover:scale-105 transition-transform duration-500`}>
+        {/* Decorative elements */}
+        <div className="absolute top-4 right-4 w-20 h-20 bg-white/20 rounded-full blur-2xl" />
+        <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/30 rounded-full blur-xl" />
+        
+        <div className="relative">
+          <div className="aspect-square rounded-[2rem] overflow-hidden mb-4 bg-white/50 backdrop-blur-sm shadow-xl">
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+          </div>
+          
+          <div className="space-y-3">
+            <h3 className="font-display text-2xl font-black text-brown uppercase leading-tight">
+              {name}
+            </h3>
+            {description && (
+              <p className="text-sm text-brown/70 font-medium line-clamp-2">{description}</p>
+            )}
+            <div className="flex items-center justify-between pt-2">
+              <div className="bg-white px-4 py-2 rounded-full">
+                <span className="text-xl font-black text-brown">{price}</span>
+              </div>
+              <Button 
+                size="sm" 
+                className="rounded-full bg-brown text-white hover:bg-brown/90 shadow-lg hover:scale-110 transition-transform"
+              >
+                <ShoppingCart className="w-4 h-4" />
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

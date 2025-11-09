@@ -47,16 +47,29 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        coffee: {
-          DEFAULT: "hsl(var(--coffee))",
-          light: "hsl(var(--coffee-light))",
+        orange: {
+          DEFAULT: "hsl(var(--orange))",
+          light: "hsl(var(--orange-light))",
         },
+        yellow: {
+          DEFAULT: "hsl(var(--yellow))",
+          light: "hsl(var(--yellow-light))",
+        },
+        blue: {
+          DEFAULT: "hsl(var(--blue))",
+          light: "hsl(var(--blue-light))",
+        },
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          light: "hsl(var(--teal-light))",
+        },
+        pink: {
+          DEFAULT: "hsl(var(--pink))",
+          light: "hsl(var(--pink-light))",
+        },
+        brown: "hsl(var(--brown))",
         cream: "hsl(var(--cream))",
-        beige: "hsl(var(--beige))",
-        rose: {
-          DEFAULT: "hsl(var(--rose))",
-          accent: "hsl(var(--rose-accent))",
-        },
+        peach: "hsl(var(--peach))",
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
