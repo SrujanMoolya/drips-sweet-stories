@@ -1,112 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --background: 35 25% 97%;
+    --foreground: 20 30% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card: 35 30% 98%;
+    --card-foreground: 20 30% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 35 30% 98%;
+    --popover-foreground: 20 30% 12%;
 
-    --primary: 30 100% 50%;
-    --primary-foreground: 0 0% 10%;
+    --primary: 15 72% 42%;
+    --primary-foreground: 35 30% 98%;
 
-    --secondary: 180 60% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 35 55% 88%;
+    --secondary-foreground: 20 30% 18%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 35 20% 93%;
+    --muted-foreground: 20 10% 45%;
 
-    --accent: 45 100% 60%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 38 90% 55%;
+    --accent-foreground: 20 30% 12%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 95%;
-    --ring: 30 100% 50%;
+    --border: 30 20% 88%;
+    --input: 35 20% 92%;
+    --ring: 15 72% 42%;
 
-    --radius: 2rem;
+    --radius: 1rem;
 
-    /* Vibrant modern bakery colors */
-    --orange: 30 100% 50%;
-    --orange-light: 35 100% 65%;
-    --yellow: 45 100% 60%;
-    --yellow-light: 50 100% 70%;
-    --blue: 195 85% 60%;
-    --blue-light: 200 85% 70%;
-    --teal: 180 60% 50%;
-    --teal-light: 180 60% 65%;
-    --pink: 340 85% 70%;
-    --pink-light: 340 85% 80%;
-    --brown: 25 40% 35%;
-    --cream: 40 30% 96%;
-    --peach: 15 90% 75%;
-    
-    /* Vibrant gradients */
-    --gradient-orange: linear-gradient(135deg, hsl(30, 100%, 50%) 0%, hsl(15, 100%, 60%) 100%);
-    --gradient-yellow: linear-gradient(135deg, hsl(45, 100%, 60%) 0%, hsl(35, 100%, 65%) 100%);
-    --gradient-blue: linear-gradient(135deg, hsl(195, 85%, 60%) 0%, hsl(180, 85%, 65%) 100%);
-    --gradient-teal: linear-gradient(135deg, hsl(180, 60%, 50%) 0%, hsl(170, 60%, 55%) 100%);
-    --gradient-pink: linear-gradient(135deg, hsl(340, 85%, 70%) 0%, hsl(320, 85%, 75%) 100%);
-    --gradient-peach: linear-gradient(135deg, hsl(15, 90%, 75%) 0%, hsl(25, 90%, 80%) 100%);
-    
-    /* Playful shadows */
-    --shadow-colored: 0 10px 40px -10px hsl(30 100% 50% / 0.3);
-    --shadow-blue: 0 10px 40px -10px hsl(195 85% 60% / 0.3);
-    --shadow-pink: 0 10px 40px -10px hsl(340 85% 70% / 0.3);
+    /* Cafe warm palette */
+    --espresso: 20 45% 18%;
+    --chocolate: 18 40% 28%;
+    --caramel: 30 70% 48%;
+    --amber: 38 90% 55%;
+    --cream: 40 40% 95%;
+    --latte: 35 30% 85%;
+    --blush: 8 60% 72%;
+    --terracotta: 12 55% 52%;
+    --sage: 140 18% 55%;
+    --olive: 80 15% 42%;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(15, 72%, 42%) 0%, hsl(38, 90%, 55%) 100%);
+    --gradient-cream: linear-gradient(135deg, hsl(40, 40%, 95%) 0%, hsl(35, 30%, 85%) 100%);
+    --gradient-espresso: linear-gradient(135deg, hsl(20, 45%, 18%) 0%, hsl(18, 40%, 28%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(12, 55%, 52%) 0%, hsl(38, 90%, 55%) 100%);
+
+    /* Shadows */
+    --shadow-warm: 0 8px 32px -8px hsl(15 72% 42% / 0.2);
+    --shadow-soft: 0 4px 24px -4px hsl(20 30% 12% / 0.08);
+    --shadow-elevated: 0 20px 60px -15px hsl(20 30% 12% / 0.15);
   }
 
   .dark {
-    --background: 28 30% 12%;
-    --foreground: 32 40% 95%;
+    --background: 20 25% 8%;
+    --foreground: 35 25% 92%;
 
-    --card: 28 25% 15%;
-    --card-foreground: 32 40% 95%;
+    --card: 20 22% 12%;
+    --card-foreground: 35 25% 92%;
 
-    --popover: 28 25% 15%;
-    --popover-foreground: 32 40% 95%;
+    --popover: 20 22% 12%;
+    --popover-foreground: 35 25% 92%;
 
-    --primary: 28 50% 58%;
-    --primary-foreground: 28 25% 10%;
+    --primary: 30 70% 50%;
+    --primary-foreground: 20 25% 8%;
 
-    --secondary: 340 40% 28%;
-    --secondary-foreground: 32 40% 95%;
+    --secondary: 20 20% 18%;
+    --secondary-foreground: 35 25% 92%;
 
-    --muted: 28 20% 20%;
-    --muted-foreground: 32 20% 65%;
+    --muted: 20 15% 16%;
+    --muted-foreground: 35 15% 55%;
 
-    --accent: 340 50% 32%;
-    --accent-foreground: 32 40% 95%;
+    --accent: 38 80% 50%;
+    --accent-foreground: 20 25% 8%;
 
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 32 40% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 35 25% 98%;
 
-    --border: 28 20% 25%;
-    --input: 28 20% 25%;
-    --ring: 28 50% 58%;
+    --border: 20 15% 20%;
+    --input: 20 15% 20%;
+    --ring: 30 70% 50%;
 
-    --coffee: 28 50% 58%;
-    --coffee-light: 28 45% 72%;
-    --cream: 32 30% 20%;
-    --beige: 32 20% 30%;
-    --rose: 340 50% 32%;
-    --rose-accent: 340 60% 42%;
-    
-    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
-    --shadow-medium: 0 8px 30px -4px hsl(0 0% 0% / 0.4);
-    --shadow-large: 0 20px 50px -12px hsl(0 0% 0% / 0.5);
-    --shadow-glow: 0 0 40px hsl(28 50% 58% / 0.4);
+    --espresso: 35 25% 85%;
+    --chocolate: 35 20% 70%;
+    --caramel: 30 60% 55%;
+    --cream: 20 15% 16%;
+    --latte: 20 12% 25%;
+
+    --shadow-warm: 0 8px 32px -8px hsl(0 0% 0% / 0.4);
+    --shadow-soft: 0 4px 24px -4px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 20px 60px -15px hsl(0 0% 0% / 0.5);
   }
 }
 
@@ -117,6 +108,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'DM Sans', system-ui, sans-serif;
   }
 
   html {
@@ -126,124 +118,70 @@ All colors MUST be HSL.
 
 @layer utilities {
   .glass {
-    @apply bg-card/80 backdrop-blur-xl border border-white/20;
-  }
-  
-  .glass-strong {
-    @apply bg-card/90 backdrop-blur-2xl border border-white/30;
+    @apply bg-card/70 backdrop-blur-xl border border-white/15;
   }
 
-  .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
-  }
-
-  .animate-slide-in-left {
-    animation: slideInLeft 0.6s ease-out forwards;
-  }
-
-  .animate-slide-in-right {
-    animation: slideInRight 0.6s ease-out forwards;
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
+  .glass-dark {
+    @apply bg-foreground/80 backdrop-blur-xl text-background;
   }
 
   .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)];
+    @apply transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[var(--shadow-elevated)];
   }
 
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.3)];
+    @apply transition-all duration-300 hover:shadow-[var(--shadow-warm)];
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
   }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
 }
 
 @keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
 }
 
+.animate-fade-in-up { animation: fadeInUp 0.7s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+.animate-slide-in-left { animation: slideInLeft 0.6s ease-out forwards; }
+.animate-slide-in-right { animation: slideInRight 0.6s ease-out forwards; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-scale-in { animation: scaleIn 0.5s ease-out forwards; }
+
 .animate-shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
   background-size: 1000px 100%;
-  animation: shimmer 2s infinite;
+  animation: shimmer 2.5s infinite;
 }

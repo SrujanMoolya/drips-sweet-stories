@@ -6,54 +6,44 @@ interface ProductCardProps {
   description?: string;
   price: string;
   image: string;
-  color?: "yellow" | "blue" | "peach" | "pink" | "teal";
+  color?: "warm" | "cream" | "blush" | "sage" | "amber";
 }
 
-const ProductCard = ({ name, description, price, image, color = "yellow" }: ProductCardProps) => {
+const ProductCard = ({ name, description, price, image, color = "warm" }: ProductCardProps) => {
   const colorClasses = {
-    yellow: "bg-yellow",
-    blue: "bg-blue",
-    peach: "bg-peach",
-    pink: "bg-pink",
-    teal: "bg-teal"
+    warm: "bg-gradient-to-br from-primary/10 to-accent/10 border-primary/15",
+    cream: "bg-gradient-to-br from-secondary to-cream border-latte/30",
+    blush: "bg-gradient-to-br from-blush/15 to-secondary border-blush/20",
+    sage: "bg-gradient-to-br from-sage/10 to-secondary border-sage/20",
+    amber: "bg-gradient-to-br from-accent/10 to-secondary border-accent/20",
   };
 
-  const bgClass = colorClasses[color];
-
   return (
-    <div className="group relative animate-fade-in-up">
-      <div className={`${bgClass} rounded-[3rem] p-6 relative overflow-hidden hover:scale-105 transition-transform duration-500`}>
-        {/* Decorative elements */}
-        <div className="absolute top-4 right-4 w-20 h-20 bg-white/20 rounded-full blur-2xl" />
-        <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/30 rounded-full blur-xl" />
+    <div className="group animate-fade-in-up">
+      <div className={`${colorClasses[color]} rounded-2xl p-5 border transition-all duration-500 hover:shadow-[var(--shadow-elevated)] hover:-translate-y-1`}>
+        <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-background/50">
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
         
-        <div className="relative">
-          <div className="aspect-square rounded-[2rem] overflow-hidden mb-4 bg-white/50 backdrop-blur-sm shadow-xl">
-            <img
-              src={image}
-              alt={name}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-            />
-          </div>
-          
-          <div className="space-y-3">
-            <h3 className="font-display text-2xl font-black text-brown uppercase leading-tight">
-              {name}
-            </h3>
-            {description && (
-              <p className="text-sm text-brown/70 font-medium line-clamp-2">{description}</p>
-            )}
-            <div className="flex items-center justify-between pt-2">
-              <div className="bg-white px-4 py-2 rounded-full">
-                <span className="text-xl font-black text-brown">{price}</span>
-              </div>
-              <Button 
-                size="sm" 
-                className="rounded-full bg-brown text-white hover:bg-brown/90 shadow-lg hover:scale-110 transition-transform"
-              >
-                <ShoppingCart className="w-4 h-4" />
-              </Button>
-            </div>
+        <div className="space-y-2">
+          <h3 className="font-display text-lg text-foreground leading-tight">
+            {name}
+          </h3>
+          {description && (
+            <p className="text-sm text-muted-foreground line-clamp-2">{description}</p>
+          )}
+          <div className="flex items-center justify-between pt-2">
+            <span className="text-lg font-bold text-primary">{price}</span>
+            <Button 
+              size="icon"
+              className="rounded-full w-9 h-9 shadow-[var(--shadow-warm)] hover:scale-110 transition-transform"
+            >
+              <ShoppingCart className="w-4 h-4" />
+            </Button>
           </div>
         </div>
       </div>
