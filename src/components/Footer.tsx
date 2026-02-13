@@ -42,7 +42,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-cream/60 text-sm">
                 <Phone className="w-4 h-4 mt-0.5 text-amber" />
-                <span>+91 99728 56775</span>
+                <span>+91 99728 56775 / +91 73535 43966</span>
               </li>
               <li className="flex items-start gap-3 text-cream/60 text-sm">
                 <Mail className="w-4 h-4 mt-0.5 text-amber" />
@@ -59,14 +59,9 @@ const Footer = () => {
             <h4 className="font-semibold text-cream mb-6 text-sm tracking-widest uppercase">Follow Us</h4>
             <div className="flex gap-3">
               <a
-                href="#"
-                className="w-11 h-11 rounded-full bg-cream/10 flex items-center justify-center text-cream/70 hover:bg-amber hover:text-espresso transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/dripsbakery_udupimanipalmalpe/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-11 h-11 rounded-full bg-cream/10 flex items-center justify-center text-cream/70 hover:bg-amber hover:text-espresso transition-all duration-300"
                 aria-label="Instagram"
               >

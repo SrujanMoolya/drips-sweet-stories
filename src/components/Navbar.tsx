@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-18">
           <Link to="/" className="flex items-center space-x-3 group">
-            <img src={dripsLogo} alt="Drips Bakery & Cafe" className="h-14 w-auto object-contain group-hover:scale-105 transition-transform" />
+            <img src={dripsLogo} alt="Drips Bakery & Cafe" className="h-14 w-auto object-contain group-hover:scale-105 transition-transform rounded-full" />
           </Link>
 
           {/* Desktop Navigation */}

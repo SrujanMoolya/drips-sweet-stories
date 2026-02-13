@@ -1,0 +1,112 @@
+import { Heart, Award, Users, Leaf } from "lucide-react";
+import Outletphoto from "@/assets/outlet-photo.jpg";
+
+const AboutSection = () => {
+  return (
+    <section className="py-24 bg-secondary/30" id="about">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h1 className="font-display text-5xl md:text-6xl font-bold mb-4">About Drips</h1>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            From Oven to Heart ❤️
+          </p>
+        </div>
+
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div>
+              <img
+                src={Outletphoto}
+                alt="Drips Cafe"
+                className="w-full rounded-2xl shadow-lg"
+              />
+            </div>
+            <div>
+              <h2 className="font-display text-4xl font-bold mb-6">Our Story</h2>
+              <p className="text-muted-foreground text-lg mb-4">
+                Drips Bakery & Cafe started with a simple dream: to create a space where every 
+                visit feels like a warm hug and every bite brings a smile. Located in the heart 
+                of Udupi and Manipal, we've become a beloved destination for students, families, 
+                and dessert enthusiasts.
+              </p>
+              <p className="text-muted-foreground text-lg mb-4">
+                What began as a small bakery has blossomed into a community favorite, serving 
+                happiness baked fresh every day. From customized designer cakes to handcrafted 
+                coffee, we pour love into every creation.
+              </p>
+              <p className="text-muted-foreground text-lg">
+                Today, Drips is more than just a bakery – it's where memories are made, 
+                celebrations come alive, and everyday moments become special.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="font-semibold text-xl mb-2">Made with Love</h3>
+              <p className="text-muted-foreground">
+                Every item is crafted with passion and attention to detail
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Leaf className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="font-semibold text-xl mb-2">100% Vegetarian</h3>
+              <p className="text-muted-foreground">
+                Fresh, quality ingredients that are completely vegetarian
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="font-semibold text-xl mb-2">Premium Quality</h3>
+              <p className="text-muted-foreground">
+                Using only the finest ingredients for superior taste
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="font-semibold text-xl mb-2">Community First</h3>
+              <p className="text-muted-foreground">
+                Building connections through food and warmth
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-secondary/30 rounded-2xl p-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+              <div>
+                <h3 className="font-semibold text-xl mb-2 text-primary">Freshness</h3>
+                <p className="text-muted-foreground">
+                  Everything is baked fresh daily, ensuring the best taste and quality
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-xl mb-2 text-primary">Hygiene</h3>
+                <p className="text-muted-foreground">
+                  Maintaining the highest standards of cleanliness and food safety
+                </p>
+              </div>
+              <div>
+                <h3 className="font-semibold text-xl mb-2 text-primary">Happiness</h3>
+                <p className="text-muted-foreground">
+                  Creating joyful experiences with every visit and every bite
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
