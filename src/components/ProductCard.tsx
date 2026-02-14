@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {
   name: string;
@@ -12,6 +13,18 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ name, description, price, image, color = "warm", index = 0 }: ProductCardProps) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: name, // Using name as ID since we don't have unique IDs
+      name,
+      price,
+      image,
+      quantity: 1
+    });
+  };
+
   const colorClasses = {
     warm: "bg-gradient-to-br from-primary/10 to-accent/10 border-primary/15",
     cream: "bg-gradient-to-br from-secondary to-cream border-latte/30",
@@ -44,6 +57,7 @@ const ProductCard = ({ name, description, price, image, color = "warm", index = 
               <Button
                 size="icon"
                 className="rounded-full w-9 h-9 shadow-[var(--shadow-warm)] hover:scale-110 transition-transform"
+                onClick={handleAddToCart}
               >
                 <ShoppingCart className="w-4 h-4" />
               </Button>

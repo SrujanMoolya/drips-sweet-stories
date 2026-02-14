@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import dripsLogo from "@/assets/drips-logo.jpg";
 import { motion, AnimatePresence } from "framer-motion";
+import { useCart } from "@/context/CartContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+
+  const { totalItems } = useCart();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -61,26 +64,53 @@ const Navbar = () => {
                 </Link>
               </motion.div>
             ))}
+
+            <Link to="/cart">
+              <Button size="icon" variant="ghost" className="ml-2 relative hover:bg-secondary rounded-full">
+                <ShoppingCart className="w-5 h-5" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </Button>
+            </Link>
+
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <Button size="sm" className="ml-4 rounded-full font-semibold shadow-[var(--shadow-warm)] hover:scale-105 transition-transform">
-                <Phone className="w-4 h-4 mr-2" />
-                Order Now
-              </Button>
+              <Link to="/menu">
+                <Button size="sm" className="ml-4 rounded-full font-semibold shadow-[var(--shadow-warm)] hover:scale-105 transition-transform">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Order Now
+                </Button>
+              </Link>
             </motion.div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-2 text-foreground/70 hover:text-foreground transition-colors rounded-lg hover:bg-secondary"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button - showing cart as well? maybe just hamburger for now */}
+          <div className="lg:hidden flex items-center gap-2">
+            <Link to="/cart">
+              <Button size="icon" variant="ghost" className="relative hover:bg-secondary rounded-full">
+                <ShoppingCart className="w-5 h-5" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </Button>
+            </Link>
+
+            <button
+              className="p-2 text-foreground/70 hover:text-foreground transition-colors rounded-lg hover:bg-secondary"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -107,10 +137,12 @@ const Navbar = () => {
                     {link.name}
                   </Link>
                 ))}
-                <Button size="sm" className="w-full rounded-full font-semibold mt-2">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Order Now
-                </Button>
+                <Link to="/menu" onClick={() => setIsOpen(false)}>
+                  <Button size="sm" className="w-full rounded-full font-semibold mt-2">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Order Now
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           )}
