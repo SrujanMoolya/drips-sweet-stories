@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, UtensilsCrossed, Cake, Image, User, Phone } from "lucide-react";
+import { motion } from "framer-motion";
 
 const FloatingBottomNav = () => {
     const location = useLocation();
@@ -22,7 +23,12 @@ const FloatingBottomNav = () => {
     };
 
     return (
-        <div className="fixed bottom-4 left-4 right-4 z-50 lg:hidden">
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
+            className="fixed bottom-4 left-4 right-4 z-50 lg:hidden"
+        >
             <nav className="bg-background/80 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 px-2 py-2 flex justify-between items-center max-w-sm mx-auto">
                 {navLinks.map((link) => (
                     <Link
@@ -52,7 +58,7 @@ const FloatingBottomNav = () => {
                     </span>
                 </Link>
             </nav>
-        </div>
+        </motion.div>
     );
 };
 

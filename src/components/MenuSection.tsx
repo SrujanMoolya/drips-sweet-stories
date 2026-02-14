@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/ui/Reveal";
 import ProductCard from "@/components/ProductCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import customCake from "@/assets/custom-cake.jpg";
@@ -131,16 +132,18 @@ const MenuSection = () => {
     return (
         <section className="py-24 bg-background" id="menu">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-16 animate-fade-in-up">
-                    <p className="text-primary text-sm font-medium tracking-widest uppercase mb-3">Explore</p>
-                    <h1 className="font-display text-5xl md:text-6xl text-foreground italic mb-4">
-                        Our Menu
-                    </h1>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        Discover our delicious selection of freshly baked goods, handcrafted beverages,
-                        and delightful desserts. All items are 100% vegetarian.
-                    </p>
-                </div>
+                <Reveal width="100%">
+                    <div className="text-center mb-16">
+                        <p className="text-primary text-sm font-medium tracking-widest uppercase mb-3">Explore</p>
+                        <h1 className="font-display text-5xl md:text-6xl text-foreground italic mb-4">
+                            Our Menu
+                        </h1>
+                        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                            Discover our delicious selection of freshly baked goods, handcrafted beverages,
+                            and delightful desserts. All items are 100% vegetarian.
+                        </p>
+                    </div>
+                </Reveal>
 
                 <Tabs defaultValue="cakes" className="w-full">
                     <TabsList className="flex flex-wrap h-auto gap-2 bg-transparent justify-center mb-12">
@@ -159,7 +162,7 @@ const MenuSection = () => {
                         <TabsContent key={category} value={category} className="mt-8">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {items.map((item, index) => (
-                                    <ProductCard key={index} {...item} />
+                                    <ProductCard key={index} {...item} index={index} />
                                 ))}
                             </div>
                         </TabsContent>
