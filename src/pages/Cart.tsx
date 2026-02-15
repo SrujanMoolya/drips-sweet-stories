@@ -120,11 +120,23 @@ const Cart = () => {
                                 {/* Quantity Controls */}
                                 <div className="flex items-center bg-green-50 border border-green-200 rounded-lg h-9">
                                     <button
-                                        className="h-full px-3 text-green-700 hover:bg-green-100 rounded-l-lg transition-colors flex items-center justify-center"
-                                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                        disabled={item.quantity <= 1}
+                                        className={`h-full px-3 rounded-l-lg transition-colors flex items-center justify-center ${item.quantity === 1
+                                                ? "text-red-500 hover:bg-red-50"
+                                                : "text-green-700 hover:bg-green-100"
+                                            }`}
+                                        onClick={() => {
+                                            if (item.quantity > 1) {
+                                                updateQuantity(item.id, item.quantity - 1);
+                                            } else {
+                                                removeFromCart(item.id);
+                                            }
+                                        }}
                                     >
-                                        <Minus className="w-3 h-3" />
+                                        {item.quantity === 1 ? (
+                                            <Trash2 className="w-3 h-3" />
+                                        ) : (
+                                            <Minus className="w-3 h-3" />
+                                        )}
                                     </button>
                                     <span className="w-6 text-center text-sm font-bold text-green-800">{item.quantity}</span>
                                     <button
